@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"></script>
+    <title>Document</title>
+</head>
+<body>
+   <div>
+    <p id="address"></p>
+    <button onclick="signMassage()">Sign</button>
+    <br><br>
+    <button onclick="recover()">Recover</button>
+   </div>
+    <script>
+
+        //1. Connect to the metamask get the user address
+        var signature = null;
+        var account = null;
+        var massage = "Signing massage in wallet";
+      
+        (async () => {
+
+            if (window.ethereum) {
+                await window.ethereum.send('eth_requestAccounts'); //waits for the user to approve the request to connect their Ethereum account by calling the  method 
+                
+                window.web3 = new Web3(window.ethereum)  //initializes the Web3 object using the Metamask provider, which is injected into the window.ethereum object.
+                let accounts = await web3.eth.getAccounts();
+                account = accounts[0];
+                document.getElementById("address").innerHTML = `Metamask Id: ${account}`;
+         }
+        })();
+	
+                async function signMassage() {
+                    signature = await web3.eth.personal.sign(massage, account);
+                    console.log("Signature = " + signature);
+                }
+
+                async function recover(){
+                    recoveredAddress = await web3.eth.personal.ecRecover(massage, signature);
+                    console.log("Recovered Address = "+ recoveredAddress);
+                }
+                
+
+    </script>
+</body>
+
+<!-- soul bound token -->
+</html>
+
+

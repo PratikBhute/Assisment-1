@@ -1,0 +1,75 @@
+/* style body with image */
+body {
+  background-image: url("/CSS_files/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* style payment details class */
+.payment-details {
+
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+/* style Heading */
+.payment-details h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  color: aqua;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+/* style each lable element */
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: aqua;
+}
+/* Style each select element and input */
+.form-group select,
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c69a9a;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.form-group select:focus,
+.form-group input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #615a5a;
+}
+
+/* Styling Button */
+.pay-now-button {
+  background-color: aqua;
+  color:  rgb(9, 36, 240);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+}
+.button {
+  margin: 0 auto;
+}
+.button-center {
+  text-align: center;
+
+}
+
+.pay-now-button:hover {
+  background-color: #c04f7c;
+}
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/CSS_files/paymentDetails.css">
+</head>
+
+<body>
+ 
+  <div class="payment-details">
+    <h2>Payment Details</h2>
+    <div class="form-group">
+      <label for="card-type">Card Type:</label>
+      <select id="card-type" name="card-type">
+        <option value="visa">Visa</option>
+        <option value="mastercard">Mastercard</option>
+        <option value="amex">American Express</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+    </div>
+    <div class="form-group">
+      <label for="expiration-date">Expiration Date:</label>
+      <input type="text" id="expiration-date" name="expiration-date" placeholder="MM / YY" required>
+    </div>
+    <div class="form-group">
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" placeholder="Enter your CVV code" required>
+    </div>
+    
+    <div class="button-center">
+      <button type="submit" class="pay-now-button" onclick="payNow()" >Pay Now</button>
+      <button type="submit" class="pay-now-button" onclick="goToUser()">Back</button>
+   </div>
+  </div>
+</body>
+
+
+<script>
+  function goToUser() {
+    window.location.href = "userdetails.html";
+  }
+  function payNow(){
+    alert("Payment is Successfully Done")
+  }
+  
+  alar
+</script>
+<script src="index.js"></script>
+</html>

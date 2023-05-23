@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.1/dist/umd/index.min.js"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+	<button  onclick="connectWC()">Connect Wallet</button>
+ <script type="text/javascript">
+
+	var account;
+
+	var provider = new WalletConnectProvider.default({
+		rpc: {
+			1: "https://cloudflare-eth.com/",  
+			137: "https://polygon-rpc.com/"
+		},
+		bridge: 'https://bridge.walletconnect.org',
+	});
+
+	//Connect with wallwt
+	var connectWC = async () =>{
+		await provider.enable();
+
+		provider = window.ethereum;
+
+		//Create web3 instance 
+		const web3 = new web3(provider);
+		windows.w3 = web3
+
+		var accounts = await web3.eth.getAccounts();
+		account = accounts[0];
+
+	}
+	//signing wallet
+	var sing = async () => {
+		if (w3){
+			return awaitw3.eth.personal.sign(msg, account)
+		}else{
+			return false;
+		}
+	}
+	//Inictiate Conteact
+	var contract = async (abi, address) => {
+		if(w3){
+		return new web3.eth.Contract(abi, address);
+		}else{
+			return false;
+		}
+	}
+
+	//close provider session 
+	var disconnect = async () => {
+		
+		await provider.disconnect();
+	}
+
+	var address = "";
+	var abi = [
+	{
+		"inputs": [],
+		"name": "count",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "decrement",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "increment",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
+
+ </script>
+</body>
+</html>
