@@ -1,0 +1,212 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "608060405234801561001057600080fd5b5061016c806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063d32cb0fe1461003b578063f8a8fd6d14610045575b600080fd5b61004361004f565b005b61004d6100ac565b005b603c80146100605761005f610107565b5b62015180801461007357610072610107565b5b62015180801461008657610085610107565b5b62093a80801461009957610098610107565b5b600a80146100aa576100a9610107565b5b565b670de0b6b3a764000080146100c4576100c3610107565b5b600180146100d5576100d4610107565b5b670de0b6b3a764000080146100ed576100ec610107565b5b671bc16d674ec80000801461010557610104610107565b5b565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052600160045260246000fdfea264697066735822122046ca68af8163e72a64a10eaf514fd23e10241322873798cf9789076e28e9090464736f6c63430008120033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH2 0x16C DUP1 PUSH2 0x20 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x36 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xD32CB0FE EQ PUSH2 0x3B JUMPI DUP1 PUSH4 0xF8A8FD6D EQ PUSH2 0x45 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x43 PUSH2 0x4F JUMP JUMPDEST STOP JUMPDEST PUSH2 0x4D PUSH2 0xAC JUMP JUMPDEST STOP JUMPDEST PUSH1 0x3C DUP1 EQ PUSH2 0x60 JUMPI PUSH2 0x5F PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH3 0x15180 DUP1 EQ PUSH2 0x73 JUMPI PUSH2 0x72 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH3 0x15180 DUP1 EQ PUSH2 0x86 JUMPI PUSH2 0x85 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH3 0x93A80 DUP1 EQ PUSH2 0x99 JUMPI PUSH2 0x98 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH1 0xA DUP1 EQ PUSH2 0xAA JUMPI PUSH2 0xA9 PUSH2 0x107 JUMP JUMPDEST JUMPDEST JUMP JUMPDEST PUSH8 0xDE0B6B3A7640000 DUP1 EQ PUSH2 0xC4 JUMPI PUSH2 0xC3 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH1 0x1 DUP1 EQ PUSH2 0xD5 JUMPI PUSH2 0xD4 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH8 0xDE0B6B3A7640000 DUP1 EQ PUSH2 0xED JUMPI PUSH2 0xEC PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH8 0x1BC16D674EC80000 DUP1 EQ PUSH2 0x105 JUMPI PUSH2 0x104 PUSH2 0x107 JUMP JUMPDEST JUMPDEST JUMP JUMPDEST PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 MSTORE PUSH1 0x1 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CHAINID 0xCA PUSH9 0xAF8163E72A64A10EAF MLOAD 0x4F 0xD2 RETURNDATACOPY LT 0x24 SGT 0x22 DUP8 CALLDATACOPY SWAP9 0xCF SWAP8 DUP10 SMOD PUSH15 0x28E9090464736F6C63430008120033 ",
+			"sourceMap": "165:678:0:-:0;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {
+				"@exercise_65": {
+					"entryPoint": 79,
+					"id": 65,
+					"parameterSlots": 0,
+					"returnSlots": 0
+				},
+				"@test_29": {
+					"entryPoint": 172,
+					"id": 29,
+					"parameterSlots": 0,
+					"returnSlots": 0
+				},
+				"panic_error_0x01": {
+					"entryPoint": 263,
+					"id": null,
+					"parameterSlots": 0,
+					"returnSlots": 0
+				}
+			},
+			"generatedSources": [
+				{
+					"ast": {
+						"nodeType": "YulBlock",
+						"src": "0:190:1",
+						"statements": [
+							{
+								"body": {
+									"nodeType": "YulBlock",
+									"src": "35:152:1",
+									"statements": [
+										{
+											"expression": {
+												"arguments": [
+													{
+														"kind": "number",
+														"nodeType": "YulLiteral",
+														"src": "52:1:1",
+														"type": "",
+														"value": "0"
+													},
+													{
+														"kind": "number",
+														"nodeType": "YulLiteral",
+														"src": "55:77:1",
+														"type": "",
+														"value": "35408467139433450592217433187231851964531694900788300625387963629091585785856"
+													}
+												],
+												"functionName": {
+													"name": "mstore",
+													"nodeType": "YulIdentifier",
+													"src": "45:6:1"
+												},
+												"nodeType": "YulFunctionCall",
+												"src": "45:88:1"
+											},
+											"nodeType": "YulExpressionStatement",
+											"src": "45:88:1"
+										},
+										{
+											"expression": {
+												"arguments": [
+													{
+														"kind": "number",
+														"nodeType": "YulLiteral",
+														"src": "149:1:1",
+														"type": "",
+														"value": "4"
+													},
+													{
+														"kind": "number",
+														"nodeType": "YulLiteral",
+														"src": "152:4:1",
+														"type": "",
+														"value": "0x01"
+													}
+												],
+												"functionName": {
+													"name": "mstore",
+													"nodeType": "YulIdentifier",
+													"src": "142:6:1"
+												},
+												"nodeType": "YulFunctionCall",
+												"src": "142:15:1"
+											},
+											"nodeType": "YulExpressionStatement",
+											"src": "142:15:1"
+										},
+										{
+											"expression": {
+												"arguments": [
+													{
+														"kind": "number",
+														"nodeType": "YulLiteral",
+														"src": "173:1:1",
+														"type": "",
+														"value": "0"
+													},
+													{
+														"kind": "number",
+														"nodeType": "YulLiteral",
+														"src": "176:4:1",
+														"type": "",
+														"value": "0x24"
+													}
+												],
+												"functionName": {
+													"name": "revert",
+													"nodeType": "YulIdentifier",
+													"src": "166:6:1"
+												},
+												"nodeType": "YulFunctionCall",
+												"src": "166:15:1"
+											},
+											"nodeType": "YulExpressionStatement",
+											"src": "166:15:1"
+										}
+									]
+								},
+								"name": "panic_error_0x01",
+								"nodeType": "YulFunctionDefinition",
+								"src": "7:180:1"
+							}
+						]
+					},
+					"contents": "{\n\n    function panic_error_0x01() {\n        mstore(0, 35408467139433450592217433187231851964531694900788300625387963629091585785856)\n        mstore(4, 0x01)\n        revert(0, 0x24)\n    }\n\n}\n",
+					"id": 1,
+					"language": "Yul",
+					"name": "#utility.yul"
+				}
+			],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "608060405234801561001057600080fd5b50600436106100365760003560e01c8063d32cb0fe1461003b578063f8a8fd6d14610045575b600080fd5b61004361004f565b005b61004d6100ac565b005b603c80146100605761005f610107565b5b62015180801461007357610072610107565b5b62015180801461008657610085610107565b5b62093a80801461009957610098610107565b5b600a80146100aa576100a9610107565b5b565b670de0b6b3a764000080146100c4576100c3610107565b5b600180146100d5576100d4610107565b5b670de0b6b3a764000080146100ed576100ec610107565b5b671bc16d674ec80000801461010557610104610107565b5b565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052600160045260246000fdfea264697066735822122046ca68af8163e72a64a10eaf514fd23e10241322873798cf9789076e28e9090464736f6c63430008120033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x36 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xD32CB0FE EQ PUSH2 0x3B JUMPI DUP1 PUSH4 0xF8A8FD6D EQ PUSH2 0x45 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x43 PUSH2 0x4F JUMP JUMPDEST STOP JUMPDEST PUSH2 0x4D PUSH2 0xAC JUMP JUMPDEST STOP JUMPDEST PUSH1 0x3C DUP1 EQ PUSH2 0x60 JUMPI PUSH2 0x5F PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH3 0x15180 DUP1 EQ PUSH2 0x73 JUMPI PUSH2 0x72 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH3 0x15180 DUP1 EQ PUSH2 0x86 JUMPI PUSH2 0x85 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH3 0x93A80 DUP1 EQ PUSH2 0x99 JUMPI PUSH2 0x98 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH1 0xA DUP1 EQ PUSH2 0xAA JUMPI PUSH2 0xA9 PUSH2 0x107 JUMP JUMPDEST JUMPDEST JUMP JUMPDEST PUSH8 0xDE0B6B3A7640000 DUP1 EQ PUSH2 0xC4 JUMPI PUSH2 0xC3 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH1 0x1 DUP1 EQ PUSH2 0xD5 JUMPI PUSH2 0xD4 PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH8 0xDE0B6B3A7640000 DUP1 EQ PUSH2 0xED JUMPI PUSH2 0xEC PUSH2 0x107 JUMP JUMPDEST JUMPDEST PUSH8 0x1BC16D674EC80000 DUP1 EQ PUSH2 0x105 JUMPI PUSH2 0x104 PUSH2 0x107 JUMP JUMPDEST JUMPDEST JUMP JUMPDEST PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 MSTORE PUSH1 0x1 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CHAINID 0xCA PUSH9 0xAF8163E72A64A10EAF MLOAD 0x4F 0xD2 RETURNDATACOPY LT 0x24 SGT 0x22 DUP8 CALLDATACOPY SWAP9 0xCF SWAP8 DUP10 SMOD PUSH15 0x28E9090464736F6C63430008120033 ",
+			"sourceMap": "165:678:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;595:243;;;:::i;:::-;;203:374;;;:::i;:::-;;595:243;663:10;650:9;:23;643:31;;;;:::i;:::-;;704:12;692:8;:24;685:32;;;;:::i;:::-;;745:8;735:6;:18;728:26;;;;:::i;:::-;;783:6;772:7;:17;765:25;;;;:::i;:::-;;824:5;818:2;:11;811:19;;;;:::i;:::-;;595:243::o;203:374::-;327:7;300:23;:34;293:42;;;;:::i;:::-;;379:1;370:5;:10;363:18;;;;:::i;:::-;;426:4;415:7;:15;408:23;;;;:::i;:::-;;544;533:7;:34;526:42;;;;:::i;:::-;;203:374::o;7:180:1:-;55:77;52:1;45:88;152:4;149:1;142:15;176:4;173:1;166:15"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "72800",
+				"executionCost": "123",
+				"totalCost": "72923"
+			},
+			"external": {
+				"exercise()": "237",
+				"test()": "236"
+			}
+		},
+		"methodIdentifiers": {
+			"exercise()": "d32cb0fe",
+			"test()": "f8a8fd6d"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "exercise",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "test",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

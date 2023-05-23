@@ -1,0 +1,51 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/web3@1.3.6/dist/web3.min.js"></script>
+      
+      
+</head>
+<body>
+    <body>
+        <input type="number" id="inputValue" placeholder="Enter a value">
+        <button id="myButton">Set Value</button>
+        <div>Updated Value: <span id="outputValue"></span></div>
+      </body>
+      <form>
+		<div>
+            <label for="amount">Enter amount:</label>
+		<input type="number" placeholder="Enter the amount" id="amount" name="amount">
+        <p>Balance: <span id="balance"></span></p>
+		<button id="connect" onclick="connect()">Connect to Wallet</button>
+        <br>
+		<button id="deposit" onclick="deposite()">Deposit</button>
+        <br>
+		<button id="withdraw" onclick="withdraw()">Withdraw</button>
+        </div>
+	</form>
+</body>
+<script>
+  
+// Set the button click event handler
+const button = document.getElementById("myButton");
+button.addEventListener("click", async () => {
+  // Get the input value
+  const value = document.getElementById("inputValue").value;
+
+  // Call the setValue function of the smart contract
+  await myContract.methods.setValue(value).send({ from: account });
+
+  // Get the updated value from the smart contract
+  const updatedValue = await myContract.methods.getValue().call();
+
+  // Update the UI with the updated value
+  document.getElementById("outputValue").textContent = updatedValue;
+});
+
+</script>
+</html> -->

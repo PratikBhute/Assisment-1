@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Bank Contract Demo</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.2.7-rc.0/web3.min.js"></script>
+</head>
+<script src="script.js"></script>
+<style>
+    body {
+        background-color: rgb(107, 209, 220);
+        font-size: 33px;
+        text-align: center;
+    }
+
+    button {
+        background-color: rgb(133, 126, 183);
+        font-size: 33px;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        cursor: pointer;
+
+    }
+
+    button:hover {
+        background-color: rgb(245, 121, 26);
+    }
+
+    input {
+        width: 300px;
+        height: 40px;
+        border: 1px solid;
+        border-radius: 20px;
+        text-indent: 60px;
+        font-size: 20px;
+
+
+    }
+
+    button .deposit {
+        background-color: rgba(115, 167, 94, 0);
+    }
+</style>
+
+<body>
+    <h1>Bank Contract Demo</h1>
+    <button onclick="connectMetamask()">Connect to metamask</button>
+    <p id="accountArea"></p>
+
+    <button onclick="connectContract()">Connect to Smart Contract</button>
+    <p id="contactArea"></p>
+
+    <button onclick="readContract()">Balance Ammount</button>
+    <p id="dataArea"></p>
+    <input type="text" placeholder="Enter amount here" name="myForm" id="amount" required /><br>
+    <br>
+    <button class="deposit" onclick="deposit()" reset="from" id="dataArea">Deposit</button>
+    <button class="withdraw" onclick="withdraw()" id="dataArea">Withdraw</button>
+</body>
+<script>
+    // connect to metamask
+    let account;
+    const connectMetamask = async () => {
+        if (window.ethereum !== "undefined") {
+            const accounts = await ethereum.request({
+                method: "eth_requestAccounts",
+            });
+            account = accounts[0];
+            document.getElementById("accountArea").innerHTML = `Metamask Id: ${account}`;
+        }
+    };
+
+    //connect to smart contract
+    const connectContract = async () => {
+        const ABI = [
+            {
+                inputs: [],
+                stateMutability: "nonpayable",
+                type: "constructor",
+            },
+            {
+                inputs: [
+                    {
+                        internalType: "int256",
+                        name: "amt",
+                        type: "int256",
+                    },
+                ],
+                name: "deposite_money",
+                outputs: [],
+                stateMutability: "nonpayable",
+                type: "function",
+            },
+            {
+                inputs: [],
+                name: "getBalance",
+                outputs: [
+                    {
+                        internalType: "int256",
+                        name: "",
+                        type: "int256",
+                    },
+                ],
+                stateMutability: "view",
+                type: "function",
+            },
+            {
+                inputs: [
+                    {
+                        internalType: "int256",
+                        name: "amt",
+                        type: "int256",
+                    },
+                ],
+                name: "withdraw",
+                outputs: [],
+                stateMutability: "nonpayable",
+                type: "function",
+            },
+        ];
+        const Address = "0x34Ee5AaefB650E862d05a5470af079176aC25917";
+        window.web3 = await new Web3(window.ethereum);
+        window.contract = await new window.web3.eth.Contract(ABI, Address);
+        document.getElementById("contactArea").innerHTML = `Connected to smart contract Id : ${Address}`;
+    };
+
+    //Get data from smart contract
+    const readContract = async () => {
+        const data = await window.contract.methods.getBalance().call();
+        document.getElementById("dataArea").innerHTML = data;
+
+    };
+
+    // deposit the amount
+    const deposit = async () => {
+        //retrive the data from the imput field form using id "amount"
+        const amt = document.getElementById("amount").value;
+        document.getElementById("amount").value = ""; //reset the form value
+        const result = await window.contract.methods.deposite_money(amt)
+            .send({ from: account });
+        document.getElementById("result").innerHTML = result;
+        readContract();
+
+
+    };
+
+    // Withdraw money
+    const withdraw = async () => {
+        const amt = document.getElementById("amount").value;
+        document.getElementById("amount").value = ""; //reset the form value
+        const result = await window.contract.methods.withdraw(amt).send(
+            { from: account });
+        document.getElementById("result").innerHTML = result;
+        readContract();
+    };
+
+</script>
+
+</html>

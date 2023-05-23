@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Note Explorer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+
+<body ng-app="NoteExplorer">
+    <div class="container" ng-controller="MainController">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 id="page-title">Note Explorer</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="note-form" action="/" method="POST">
+                    <div class="form-group">
+                        <input required type="text" class="form-control" placeholder="Enter the title" id="title" name="title" ng-model="noteTitle">
+                    </div>
+                    <div class="form-group">
+                        <input required type="text" class="form-control" placeholder="Enter the content" id="content" name="content" ng-model="noteContent">
+                    </div>
+                    <button type="submit" class="btn btn-primary margin-auto btn-search">
+                        Add Note
+                    </button>
+                    <button type="submit" class="btn btn-primary margin-auto btn-search">
+                        Note Table
+                    </button>
+
+            
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+
+                <!-- 'display Note' table -->
+              <h3 class="table-title" ng-if="!note">Notes</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Content</th>
+                            <th>Timestamp</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="note in notes">
+                            <td> {{note.title}} </td>
+                            <td>{{note.content}}</td>
+                            <td>{{note.createdAt}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" data-id="{{note._id}}" ng-click="updateNote(note)">Update</button>
+
+                                <button type="button" class="btn btn-danger" data-id="{{note._id}}">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> 
+                
+            </div>
+        </div>
+    </div>
+    <script>	
+   window.app = angular.module('NoteExplorer', []);
+window.app.controller('MainController', function($scope, $http) {
+    // Initialize an empty array to hold the notes
+    $scope.notes = [];
+
+    // Make an HTTP GET request to retrieve the notes
+    $http.get('/notes').then(function(response) {
+        // Assign the retrieved notes to the $scope variable
+        $scope.notes = response.data;
+    });
+   
+   //for update the notes
+    $scope.updateNote = function(note) {
+      $http.put('/notes/' + note._id, note)
+  .then(function(response) {
+    // Update the note in the $scope.notes array
+    var index = $scope.notes.findIndex(function(n) {
+      return n._id === note._id;
+    });
+    if (index >= 0) {
+      $scope.notes[index] = note;
+    }
+  }, function(response) {
+    // Display an error message to the user
+    alert('Failed to update note. Please try again later.');
+  });
+
+  };
+
+
+
+});a
+
+	
+	</script>
+
+	<style type="text/css">
+		html, body {
+			min-height: 100vh;
+			background-color: #e8e8e8;
+		}
+		.container {
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+		#page-title {
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		.table-title {
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		.table {
+			background-color: #ffffff;
+			box-shadow: 2px 2px 15px -3px rgba(0,0,0,0.75);
+		}
+		#balance-text {
+			text-align: center;
+			margin-top: -20px;
+			margin-bottom: 30px;
+		}
+		.margin-auto {
+			margin: auto;
+			display: block;
+		}
+		
+		.bold {
+			font-weight: 700;
+		}
+		.no-data-text {
+			color: red;
+			text-align: center;
+		}
+	</style>
+
+
+</body>
+
+</html>

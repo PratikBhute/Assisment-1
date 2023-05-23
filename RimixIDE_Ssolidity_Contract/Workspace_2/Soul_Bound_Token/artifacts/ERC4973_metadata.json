@@ -1,0 +1,385 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "metadata",
+						"type": "bytes"
+					}
+				],
+				"name": "decodeURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "metadata",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "give",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "metadata",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "take",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "unequip",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"Transfer(address,address,uint256)": {
+					"details": "This emits when ownership of any ABT changes by any mechanism.  This event emits when ABTs are given or equipped and unequipped  (`to` == 0)."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"balanceOf(address)": {
+					"details": "ABTs assigned to the zero address are considered invalid, and this  function throws for queries about the zero address.",
+					"params": {
+						"owner": "An address for whom to query the balance"
+					},
+					"returns": {
+						"_0": "The number of ABTs owned by `address owner`, possibly zero"
+					}
+				},
+				"decodeURI(bytes)": {
+					"params": {
+						"metadata": "The metadata that will be associated to an ABT."
+					},
+					"returns": {
+						"_0": "A URI that represents the metadata."
+					}
+				},
+				"give(address,bytes,bytes)": {
+					"params": {
+						"metadata": "The metadata that will be associated to the ABT.",
+						"signature": "A signature of the EIP-712 structured data hash  `Agreement(address active,address passive,bytes metadata)` signed by  `address to`.",
+						"to": "The receiver of the ABT."
+					},
+					"returns": {
+						"_0": "A unique `uint256 tokenId` generated by type-casting the `bytes32`  EIP-712 structured data hash to a `uint256`."
+					}
+				},
+				"name()": {
+					"details": "Returns the token collection name."
+				},
+				"ownerOf(uint256)": {
+					"details": "ABTs assigned to zero address are considered invalid, and queries  about them do throw.",
+					"params": {
+						"tokenId": "The identifier for an ABT."
+					},
+					"returns": {
+						"_0": "The address of the owner bound to the ABT."
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				},
+				"symbol()": {
+					"details": "Returns the token collection symbol."
+				},
+				"take(address,bytes,bytes)": {
+					"details": "Throws unless `bytes signature` represents a signature of the  EIP-712 structured data hash  `Agreement(address active,address passive,bytes metadata)` expressing  `address from`'s explicit agreement to be publicly associated with  `msg.sender` and `bytes metadata`. A unique `uint256 tokenId` must be  generated by type-casting the `bytes32` EIP-712 structured data hash to a  `uint256`. If `bytes signature` is empty or `address from` is a contract,  an EIP-1271-compatible call to `function isValidSignatureNow(...)` must  be made to `address from`. A successful execution must result in the  emission of an `event Transfer(from, msg.sender, tokenId)`. Once an ABT  exists as an `uint256 tokenId` in the contract, `function take(...)` must  throw.",
+					"params": {
+						"from": "The origin of the ABT.",
+						"metadata": "The metadata that will be associated to the ABT.",
+						"signature": "A signature of the EIP-712 structured data hash  `Agreement(address active,address passive,bytes metadata)` signed by  `address from`."
+					},
+					"returns": {
+						"_0": "A unique `uint256 tokenId` generated by type-casting the `bytes32`  EIP-712 structured data hash to a `uint256`."
+					}
+				},
+				"tokenURI(uint256)": {
+					"details": "Returns the Uniform Resource Identifier (URI) for `tokenId` token."
+				},
+				"unequip(uint256)": {
+					"details": "Must emit a `event Transfer` with the `address to` field pointing to  the zero address.",
+					"params": {
+						"tokenId": "The identifier for an ABT."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"balanceOf(address)": {
+					"notice": "Count all ABTs assigned to an owner"
+				},
+				"decodeURI(bytes)": {
+					"notice": "Decodes the opaque metadata bytestring of an ABT into the token  URI that will be associated with it once it is created on chain."
+				},
+				"give(address,bytes,bytes)": {
+					"notice": "`Agreement(address active,address passive,bytes metadata)` expressing  `address to`'s explicit agreement to be publicly associated with  `msg.sender` and `bytes metadata`. A unique `uint256 tokenId` must be  generated by type-casting the `bytes32` EIP-712 structured data hash to a  `uint256`. If `bytes signature` is empty or `address to` is a contract,  an EIP-1271-compatible call to `function isValidSignatureNow(...)` must  be made to `address to`. A successful execution must result in the  `event Transfer(msg.sender, to, tokenId)`. Once an ABT exists as an  `uint256 tokenId` in the contract, `function give(...)` must throw."
+				},
+				"ownerOf(uint256)": {
+					"notice": "Find the address bound to an ERC4973 account-bound token"
+				},
+				"take(address,bytes,bytes)": {
+					"notice": "Creates and transfers the ownership of an ABT from an `address from` to the transaction's `msg.sender`."
+				},
+				"unequip(uint256)": {
+					"notice": "Removes the `uint256 tokenId` from an account. At any time, an  ABT receiver must be able to disassociate themselves from an ABT  publicly through calling this function. After successfully executing this  function, given the parameters for calling `function give` or  `function take` a token must be re-equipable."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Soul_Bound_Token/EIP4973.sol": "ERC4973"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0xd10975de010d89fd1c78dc5e8a9a7e7f496198085c151648f20cba166b32582b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fb0048dee081f6fffa5f74afc3fb328483c2a30504e94a0ddd2a5114d731ec4d",
+				"dweb:/ipfs/QmZptt1nmYoA5SgjwnSgWqgUSDgm4q52Yos3xhnMv3MV43"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+				"dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+			]
+		},
+		"Soul_Bound_Token/EIP4973.sol": {
+			"keccak256": "0x9ee877db4aae766602f6f605cc6305a4d1ae3db1c12c3b03ea34d6adc4800f40",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8c05b55a85d487772f6167c13f2f9ad64d3c0ede5f3557bab233c48289c5f79c",
+				"dweb:/ipfs/QmdkbCiEXCMRcjpSVmttYPkHYWTsbtDQwBQ7FrsRiaBbXD"
+			]
+		},
+		"Soul_Bound_Token/IERC4973.sol": {
+			"keccak256": "0xbbff7c8be461864d2ff83dc0fbf2f17514917cfc0df99da3cf4b55afb4745685",
+			"license": "CC0-1.0",
+			"urls": [
+				"bzz-raw://b2b5df9b32565243f465235864f1dd4aa02e63a42e0a0bec1c4587ba640ca159",
+				"dweb:/ipfs/QmQUSoXYUkdKR9wUuj8c3JqKznBvYusoDwTpqAHfVjDx48"
+			]
+		},
+		"Soul_Bound_Token/IERC721Metadata.sol": {
+			"keccak256": "0xf4f2af1277bc6f948191c72b733b74ca9e062e99abccc01cbd89c13a72f185b5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2d6a4a69d536e3b8a18b6bdc6c991caa4bbd001ce6ec9263da277c3dd44cb9a6",
+				"dweb:/ipfs/QmZuoQyQnPW2nN7HXPVubwm9r5AGHMhHKHNRc2quPZJnqv"
+			]
+		}
+	},
+	"version": 1
+}

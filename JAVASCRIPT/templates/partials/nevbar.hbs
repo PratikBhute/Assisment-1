@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<!-- Custom CSS -->
+	<style>
+		.navbar-brand {
+			font-size: 1.5rem;
+			font-weight: bold;
+			font-family: Georgia, 'Times New Roman', Times, serif;
+		}
+		.bg-light {
+    	background-color: #efe2d2!important;
+}
+		.navbar-nav .nav-item .nav-link {
+			color: #333;
+			/* font-weight: bold; */
+		}
+		.navbar-nav .nav-item .nav-link:hover {
+			color: #666;
+		}
+		.search-form {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			position: relative;
+		}
+		.search-form .form-control {
+			border: none;
+			border-radius: 20px;
+			padding-left: 40px;
+			height: 40px;
+			box-shadow: none;
+			font-size: 14px;
+		}
+		.search-form .form-control:focus {
+			box-shadow: none;
+		}
+		.search-form .search-icon {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			transform: translateY(-50%);
+			font-size: 18px;
+			color: #666;
+		}
+		.logout {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.logout .btn {
+			border-radius: 20px;
+			background-color: #eec9c9;
+			color: #333;
+			font-size: 14px;
+			font-weight: bold;
+			padding: 5px 15px;
+			border: none;
+			box-shadow: none;
+			transition: all 0.3s;
+		}
+		.logout .btn:hover {
+			background-color: #e6e6e6;
+			color: #333;
+			box-shadow: none;
+		}
+		
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light ">
+		<a class="navbar-brand" href="#">My Website</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact</a>
+				</li>
+			</ul>
+			<form class="form-inline search-form">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+				<i class="fas fa-search search-icon"></i>
+			</form>
+			<div class="logout">
+				<button type="button" class="btn btn-outline-dark">Logout</button>
+			</div>

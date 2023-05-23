@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "calculator",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/artifacts/operators.sol": "ArithmeticOperators"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/artifacts/operators.sol": {
+			"keccak256": "0x48c2a193f7cb7c61fb61f8db2b24d2f1692661d56fcca8ea23cc9cc911cb2d5e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://6ceeb6c291fb8ec255b5797e601880b01daf94b1c4c14cbedc7a643a48affd4d",
+				"dweb:/ipfs/QmdvUFEKAukoCFkjrqUcWBGzhwtvRQz9uxJRKxobMjymVA"
+			]
+		}
+	},
+	"version": 1
+}

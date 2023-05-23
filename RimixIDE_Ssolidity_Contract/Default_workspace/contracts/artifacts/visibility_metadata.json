@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "y",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/visibilityModifire.sol": "visibility"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/visibilityModifire.sol": {
+			"keccak256": "0x94f8d5541a1c456e1476bc9b134764b20cfe9e594a27db0243c1b6849de24257",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d0661c911400b3086aaa7347394e675e356cc2990483812703c43a43fcb94b29",
+				"dweb:/ipfs/Qmbnqr8H6v9R2hB2Rvcyejq9SoLceuje4T7nC8V2n8VQ3E"
+			]
+		}
+	},
+	"version": 1
+}

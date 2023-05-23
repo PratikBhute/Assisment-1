@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "a",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "b",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/byte-converson.sol": "demo"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/byte-converson.sol": {
+			"keccak256": "0xdbfa6b038d2143fb7db02f8fcbcea02a89f1b3b7f3ba793282be976a3bbcf9d4",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3280ca6f0555091fe32199327a3916ba81a32bc2bf9d729cd09fdfdf59a36a9d",
+				"dweb:/ipfs/QmUghEqVkrAGps9pGZPvg1mGGCsgKHqdbSKJLbhLzyTamo"
+			]
+		}
+	},
+	"version": 1
+}

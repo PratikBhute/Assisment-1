@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getMovieId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setMovie",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/strut-in-slidity.sol": "learnStructs"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/strut-in-slidity.sol": {
+			"keccak256": "0x8db39df4cf65af44268f33e310f6b2a2c8aaa125a6c4f7972333be58f2517794",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b9f125900a84a9a1fd3fc2b9f4dde383e9b2a5a52511cd561c378faf38ec5b6e",
+				"dweb:/ipfs/Qmcxx3vGSwN6HXnm5k2p5kkWwWMAvpCP9iRTU2K4sxVzHY"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+    <title>Authenting user</title>
+</head>
+
+<body>
+    <button onclick="connect()">login with web3</button>
+
+    <script type="text/javascript">
+        let account = null;
+        let accessToken = null;
+
+        const connect = async () => {
+            if (window.ethereum) {
+                await window.ethereum.send('eth_requestAccounts');              //waits for the user to approve the request to connect their Ethereum account by calling the  method 
+                window.web3 = new Web3(window.ethereum)                          //initializes the Web3 object using the Metamask provider, which is injected into the window.ethereum object.
+                let accounts = await web3.eth.getAccounts();
+                account = accounts[0];
+
+                accessToken = await authenticate();
+                let opts = {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': "application/json",
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                }
+              let  res = await fetch(`/secret`, opts);
+                alert(await res.text());
+            }
+        };
+
+        const authenticate = async () => {
+            let res = await fetch(`/nonce?address=${account}`);
+            let resBody = await res.json();
+            let signature = await web3.eth.personal.sign(resBody.message, account);
+
+            let opts = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': "application/json",
+                    'Authorization': `Bearer ${resBody.tempToken}`
+                }
+            }
+            res = await fetch(`/verify?signature=${signature}`, opts);
+            resBody = await res.json();
+            return resBody.token;
+
+            console.log(signature);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "exercise",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "test",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/assert-test-method.sol": "learnEtherUnits"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/assert-test-method.sol": {
+			"keccak256": "0x1ece21e4599731e8528ccbfdfbf6ec8a3fcd7a44a316bc071c1726e84103f3d0",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d1846be298c8216639901ce147770f5aced0532f5c9c08637e604f5aebc4ebc3",
+				"dweb:/ipfs/Qmdt27nH4APUjHnVRoYDXVZRCXDk4NsBBtpvT81mQPDamj"
+			]
+		}
+	},
+	"version": 1
+}

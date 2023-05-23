@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+ 
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<!-- <script src="./script.js"></script> -->
+    <title>Wallet Form</title>
+	<!-- <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+			padding: 20px;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 0;
+		}
+
+		form {
+			max-width: 500px;
+			margin: 0 auto;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			padding: 20px;
+		}
+
+		label {
+			display: block;
+			font-size: 1.2em;
+			margin-bottom: 10px;
+		}
+
+		input[type="number"] {
+			width: 100%;
+			padding: 10px;
+			font-size: 1.2em;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 20px;
+			box-sizing: border-box;
+		}
+
+		button {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 1.2em;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		button:hover {
+			background-color: #0069d9;
+		}
+
+		button:active {
+			transform: translateY(1px);
+		}
+
+		@media screen and (max-width: 500px) {
+			form {
+				padding: 10px;
+			}
+		}
+	</style> -->
+</head>
+<body>
+	<h1>Bank Contract</h1>
+	<div>
+		<input type="text" name="amount" id="amount">
+		<p id='balance'></p>
+		<button id='deposit'>Deposit</button>
+		<button id='withdraw'>Withdraw</button>
+	</div>
+</body>
+<script>
+	// connet to contract
+ var contract;
+ $(document).ready(function(){
+	web3 = new Web3(web3.currentProvider);
+
+	const contractAddress = "0x2e189D3cA373251184eaaC3eec4e71df48960F08";
+	const contractABI = 
+	[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "int256",
+				"name": "amt",
+				"type": "int256"
+			}
+		],
+		"name": "deposite_money",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBalance",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "int256",
+				"name": "amt",
+				"type": "int256"
+			}
+		],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
+
+	contract = new web3.eth.Contract(contractABI, contractAddress);
+	contract.methods.getBalance().call().then(function (bal) {
+		$('#balance').html(bal);
+	})
+ })
+ 	$('#deposit').click(function(){
+		var amt = 0;
+		amt = parseInt($('#amount').val());
+		web3.eth.getAccounts().then(function(amount){
+			var acc = accounts[0];
+			return contract.methods.deposite_money(amt).send({from:acc})
+		})
+		.then(function(tx){
+			console.log(tx);
+		})
+		.catch(function(tx){
+			console.log(tx);
+		})
+	});
+
+
+	$('#withdraw').click(function(){
+		var amt = 0;
+		amt = parseInt($('#amount').val());
+		web3.eth.getAccounts().then(function(amount){
+			var acc = accounts[0];
+			return contract.methods.withdraw(amt).send({from:acc})
+		})
+		.then(function(tx){
+			console.log(tx);
+		})
+		.catch(function(tx){
+			console.log(tx);
+		})
+	});
+	
+	
+
+ </script>
+</html>
